@@ -4,8 +4,8 @@ services:
     image: nginx:1.17.1-alpine
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     ports:
-      - "80:80"
-      - "443:443"
+            - "0.0.0.0:80:80"
+            - "0.0.0.0:443:443"
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./src:/usr/share/nginx/html
