@@ -46,7 +46,7 @@ ul{
         box-shadow: 9px 9px 20px 0px rgba(0,0,0, .4);
     }
 .blog__topImg{
-        max-width: 100%;
+        max-width: 30%;
     }
 .blog__content{
         padding: .8rem;
