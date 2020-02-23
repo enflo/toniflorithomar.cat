@@ -1,14 +1,7 @@
 import os
-import sentry_sdk
 from flask import Flask, render_template, jsonify, request
-from sentry_sdk.integrations.flask import FlaskIntegration
 
 app = Flask(__name__)
-
-sentry_sdk.init(
-    dsn="https://add5490ec85c4c228c63e480f8e95293@sentry.io/2793838",
-    integrations=[FlaskIntegration()]
-)
 
 @app.route("/", methods=['GET'])
 def home():
