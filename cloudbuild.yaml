@@ -1,0 +1,13 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/toni-204018/web', '-f', 'dockerfile','.']
+  timeout: 500s
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/toni-204018/web']
+
+- name: "gcr.io/cloud-builders/gcloud"
+  args: ['beta', 'run', 'deploy', 'web', '--image', 'gcr.io/toni-204018/web', '--region', 'europe-west1', '--allow-unauthenticated', '--platform', 'managed']
+
+images:
+  - gcr.io/toni-204018/weather
