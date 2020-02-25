@@ -10,4 +10,4 @@ steps:
   args: ['beta', 'run', 'deploy', 'web', '--image', 'gcr.io/canflo/web', '--region', 'europe-west1', '--allow-unauthenticated', '--platform', 'managed']
 
 images:
-  - gcr.io/toni-204018/weather
+  - gcr.io/canflo/web
